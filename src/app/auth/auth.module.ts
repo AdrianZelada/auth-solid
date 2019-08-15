@@ -7,6 +7,7 @@ import {Route, RouterModule, Routes} from '@angular/router';
 import {AUTH_PROVIDERS, AuthProviders} from './interfaces/auth-service-interface';
 import {AuthService} from './services/auth.service';
 import {AuthDummyService} from './services/auth-dummy.service';
+import {AuthProvidersService} from './services/auth-providers.service';
 
 const router: Routes = [
   {
@@ -27,8 +28,8 @@ const router: Routes = [
 ];
 
 
-export function authServiceFactory(config: AuthProviders, authDummyService: AuthDummyService, injector: Injector) {
-  return new AuthService(injector, config);
+export function authServiceFactory(config: AuthProviders, injector: Injector) {
+  return new AuthProvidersService(injector, config);
 }
 
 
@@ -49,9 +50,9 @@ export class AuthModule {
       providers: [
         { provide: AUTH_PROVIDERS, useValue: authOptions },
         {
-          provide: AuthService,
+          provide: AuthProvidersService,
           useFactory: authServiceFactory,
-          deps: [AUTH_PROVIDERS, AuthDummyService,Injector],
+          deps: [AUTH_PROVIDERS, Injector],
         },
         AuthDummyService
       ],

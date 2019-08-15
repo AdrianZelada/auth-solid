@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {AuthModule} from './auth/auth.module';
 import { LayoutComponent } from './layout/layout.component';
 import {AuthEmailPasswordService} from './service/auth-email-password.service';
+import {AuthServiceInterface} from './auth/interfaces/auth-service-interface';
+// import {AbstractAuthService} from './auth/interfaces/auth-service-interface';
 
 @NgModule({
   declarations: [
