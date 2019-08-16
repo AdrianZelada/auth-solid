@@ -1,13 +1,12 @@
-import {Injector, ModuleWithProviders, NgModule} from '@angular/core';
+import { Injector, ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthComponent } from './auth.component';
-import {Route, RouterModule, Routes} from '@angular/router';
-import {AUTH_PROVIDERS, AuthProviders} from './interfaces/auth-service-interface';
-import {AuthService} from './services/auth.service';
-import {AuthDummyService} from './services/auth-dummy.service';
-import {AuthProvidersService} from './services/auth-providers.service';
+import { RouterModule, Routes} from '@angular/router';
+import { AUTH_PROVIDERS, AuthProviders} from './interfaces/auth-service-interface';
+import { AuthDummyService} from './services/auth-dummy.service';
+import { AuthProvidersService} from './services/auth-providers.service';
 
 const router: Routes = [
   {
